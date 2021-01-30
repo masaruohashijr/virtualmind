@@ -14,8 +14,8 @@ import javax.persistence.Table;
 
 @Entity
 @lombok.Data
-@Table(name = "apartment")
-@SequenceGenerator(name = "apartment_expense_sequence", sequenceName = "seq_expense_apartment")
+@Table(name = "apartment_expense")
+@SequenceGenerator(allocationSize = 1, initialValue = 1, name = "apartment_expense_sequence", sequenceName = "seq_apartment_expense")
 public class ApartmentExpense {
 
 	@Id

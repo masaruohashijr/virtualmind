@@ -10,6 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -19,7 +21,7 @@ import lombok.Data;
 @Entity
 @lombok.Data
 @Table(name = "building")
-@SequenceGenerator(name = "building_sequence", sequenceName = "seq_building")
+@SequenceGenerator(allocationSize = 1, initialValue = 1, name = "building_sequence", sequenceName = "seq_building")
 public class Building {
 
 	@Id
@@ -37,5 +39,8 @@ public class Building {
 			fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	private Collection<BuildingExpense> expenses = new ArrayList<BuildingExpense>();
 
+	@OneToMany(mappedBy = "building", targetEntity = Apartment.class, 
+			fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+	private Collection<Apartment> apartments = new ArrayList<Apartment>();
 
 }

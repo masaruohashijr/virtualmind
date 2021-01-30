@@ -13,7 +13,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "topic")
-@SequenceGenerator(name = "topic_sequence", sequenceName = "seq_topic", initialValue = 1, allocationSize = 1)
+@SequenceGenerator(allocationSize = 1, initialValue = 1, name = "topic_sequence", sequenceName = "seq_topic")
 public class Topic {
 
 	@Id

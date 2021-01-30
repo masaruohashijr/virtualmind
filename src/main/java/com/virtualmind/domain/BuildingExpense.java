@@ -16,17 +16,17 @@ import lombok.Data;
 
 @Entity
 @lombok.Data
-@Table(name = "building")
-@SequenceGenerator(name = "building_sequence", sequenceName = "seq_building")
+@Table(name = "building_expense")
+@SequenceGenerator(allocationSize = 1, initialValue = 1, name = "building_expense_sequence", sequenceName = "seq_building_expense")
 public class BuildingExpense {
 
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "building_sequence")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "building_expense_sequence")
 	private Long id;
 	
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "seq_building", referencedColumnName = "id", nullable = false)
+	@JoinColumn(name = "id_building", referencedColumnName = "id", nullable = false)
 	private Building building;
 
 	@Column(name = "title", nullable = false)

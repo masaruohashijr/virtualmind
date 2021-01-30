@@ -13,7 +13,7 @@ import lombok.Data;
 @Entity
 @lombok.Data
 @Table(name = "post")
-@SequenceGenerator(name = "post_sequence", sequenceName = "seq_post")
+@SequenceGenerator(allocationSize = 1, initialValue = 1, name = "post_sequence", sequenceName = "seq_post")
 public class Post {
 
 	@Id

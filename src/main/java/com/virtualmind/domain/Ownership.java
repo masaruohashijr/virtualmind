@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @lombok.Data
 @Table(name = "ownership")
-@SequenceGenerator(name = "ownership_sequence", sequenceName = "seq_ownership")
+@SequenceGenerator(allocationSize = 1, initialValue = 1, name = "ownership_sequence", sequenceName = "seq_ownership")
 public class Ownership {
 
 	@Id
@@ -22,11 +22,11 @@ public class Ownership {
 	private Long id;
 
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "seq_apartment", referencedColumnName = "id", nullable = false)
+	@JoinColumn(name = "id_apartment", referencedColumnName = "id", nullable = false)
 	private Apartment apartment;
 
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "seq_owner", referencedColumnName = "id", nullable = false)
+	@JoinColumn(name = "id_owner", referencedColumnName = "id", nullable = false)
 	private Owner owner;
 
 }

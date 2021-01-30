@@ -10,21 +10,9 @@ import com.virtualmind.domain.Topic;
 import com.virtualmind.dto.TopicDTO;
 import com.virtualmind.repository.TopicRepository;
 
-@Component("topicService")
-@Configuration
-@ComponentScan("com.virtuamind")
-public class TopicService {
+public class BillingDocumentService {
 
-	@Autowired
-	TopicRepository topicRepository;
-
-	@Transactional
-	public Topic updateTopic(Long topicId, TopicDTO topicDTO) {
-		Topic topic = new Topic();
-		topic.setId(topicDTO.getId());
-		topic.setName(topicDTO.getName());
-		Topic saved = topicRepository.save(topic);
-		return saved;
+	public void issueDocument(Long topicId, TopicDTO topicDTO) {
 	}
 
 }
