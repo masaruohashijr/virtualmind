@@ -24,7 +24,7 @@ public class ApartmentExpense {
 	private Long id;
 
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "seq_apartament", referencedColumnName = "seq_apartament", nullable = false)
+	@JoinColumn(name = "id_apartment", referencedColumnName = "id", nullable = false)
 	private Apartment apartment;
 
 	@Column(name = "title", nullable = false)

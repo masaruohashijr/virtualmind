@@ -28,7 +28,7 @@ public class Apartment {
 	@Column(name = "room", nullable = false, length = 10)
 	private String roomNumber;
 
-	@OneToMany(mappedBy = "apartament", targetEntity = ApartmentExpense.class, 
+	@OneToMany(mappedBy = "apartment", targetEntity = ApartmentExpense.class, 
 			fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	private Collection<ApartmentExpense> expenses = new ArrayList<ApartmentExpense>();
 

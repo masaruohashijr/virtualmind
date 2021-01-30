@@ -22,11 +22,11 @@ public class Ownership {
 	private Long id;
 
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "seq_apartment", referencedColumnName = "seq_apartment", nullable = false)
+	@JoinColumn(name = "seq_apartment", referencedColumnName = "id", nullable = false)
 	private Apartment apartment;
 
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "seq_owner", referencedColumnName = "seq_owner", nullable = false)
+	@JoinColumn(name = "seq_owner", referencedColumnName = "id", nullable = false)
 	private Owner owner;
 
 }

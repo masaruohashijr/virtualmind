@@ -26,7 +26,7 @@ public class BuildingExpense {
 	private Long id;
 	
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "seq_building", referencedColumnName = "seq_building", nullable = false)
+	@JoinColumn(name = "seq_building", referencedColumnName = "id", nullable = false)
 	private Building building;
 
 	@Column(name = "title", nullable = false)
