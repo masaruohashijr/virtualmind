@@ -12,7 +12,7 @@ import com.virtualmind.repository.TopicRepository;
 
 @Component("topicService")
 @Configuration
-@ComponentScan("com.virtuamind")
+@ComponentScan("com.virtualmind")
 public class TopicService {
 
 	@Autowired

@@ -12,21 +12,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.virtualmind.domain.ApartmentExpense;
-import com.virtualmind.domain.Topic;
-import com.virtualmind.dto.TopicDTO;
 import com.virtualmind.json.Response;
 import com.virtualmind.service.BuildingService;
-import com.virtualmind.service.TopicService;
 
 @RestController
-@RequestMapping("/api/topic/v1")
+@RequestMapping("/api/v1")
 @Configuration
-@ComponentScan("com.virtuamind")
+@ComponentScan("com.virtualmind")
 public class BuildingController {
 	
 	@Autowired
 	BuildingService buildingService;
 	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public void login() {
+		System.out.println("login");
+	}
+		
 	@RequestMapping(value = "/registerSharedExpense", method =  RequestMethod.POST)
 	public ResponseEntity<Response> registerSharedExpense(@RequestParam String id, @RequestParam String cost){
 		Response response = new Response();

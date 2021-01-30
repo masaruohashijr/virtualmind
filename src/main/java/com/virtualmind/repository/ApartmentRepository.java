@@ -11,7 +11,7 @@ import com.virtualmind.domain.Apartment;
 @Component("apartmentRepository")
 public interface ApartmentRepository extends CrudRepository<Apartment, Integer> {
 	
-	@Query("SELECT a FROM Apartment a WHERE a.building.id = ?")
+	@Query("SELECT a FROM Apartment a WHERE a.building.id = 2")
 	List<Apartment> loadApartmentsByBuildingId(Integer buildingId);
 
 }

@@ -8,6 +8,4 @@ import com.virtualmind.domain.ApartmentExpense;
 @Component("apartmentExpenseRepository")
 public interface ApartmentExpenseRepository extends CrudRepository<ApartmentExpense, Integer> {
 
-	void registerExpense(ApartmentExpense expense);
-
 }

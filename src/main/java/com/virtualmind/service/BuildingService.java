@@ -18,9 +18,9 @@ import com.virtualmind.repository.ApartmentExpenseRepository;
 import com.virtualmind.repository.ApartmentRepository;
 import com.virtualmind.repository.BuildingRepository;
 
-@Component("topicService")
+@Component("buildingService")
 @Configuration
-@ComponentScan("com.virtuamind")
+@ComponentScan("com.virtualmind")
 public class BuildingService {
 
 	@Autowired
@@ -31,10 +31,10 @@ public class BuildingService {
 	BuildingRepository buildingRepository;
 
 	@Transactional
-	public List<ApartmentExpense> registerSharedExpense(Integer buildingId, Double cost) 
+	public List<ApartmentExpense> registerSharedExpense(Integer buildingId, Double cost)
 			throws WithoutApartmentsException {
 		List<Apartment> apartments = apartmentRepository.loadApartmentsByBuildingId(buildingId);
-		if(apartments.size()==0) {
+		if (apartments.size() == 0) {
 			throw new WithoutApartmentsException();
 		}
 		Double ratedExpense = (double) cost / apartments.size();
@@ -43,7 +43,11 @@ public class BuildingService {
 			ApartmentExpense expense = new ApartmentExpense();
 			expense.setValue(ratedExpense);
 			expense.setApartment(apartment);
-			apartmentExpenseRepository.save(expense);
+			try {
+				apartmentExpenseRepository.save(expense);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 		}
 		return registered;
 	}

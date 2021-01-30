@@ -27,19 +27,19 @@ public class ApartmentExpense {
 	@JoinColumn(name = "id_apartment", referencedColumnName = "id", nullable = false)
 	private Apartment apartment;
 
-	@Column(name = "title", nullable = false)
+	@Column(name = "title")
 	private String title;
 
-	@Column(name = "address", nullable = false)
+	@Column(name = "address")
 	private Double value;
 
 	@Column(name = "fact_date")
 	private LocalDate factDate;
 
-	@Column(name = "due_date", nullable = false)
+	@Column(name = "due_date")
 	private LocalDate dueDate;
 
-	@Column(name = "pmt_date", nullable = false)
+	@Column(name = "pmt_date")
 	private LocalDate paymentDate;
 
 }

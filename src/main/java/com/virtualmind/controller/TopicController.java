@@ -16,7 +16,7 @@ import com.virtualmind.service.TopicService;
 @RestController
 @RequestMapping("/api/topic/v1")
 @Configuration
-@ComponentScan("com.virtuamind")
+@ComponentScan("com.virtualmind")
 public class TopicController {
 	@Autowired
 	TopicService topicService;
